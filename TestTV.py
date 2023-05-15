@@ -1,9 +1,9 @@
 # Make a Class named TV
 class TV:
     # Create 2 objects 
-    def __init__(tv_object, channel, volume ):
-        tv_object.channel = channel
-        tv_object.volume = volume
+    def __init__(self, channel, volume ):
+        self.channel = channel
+        self.volume = volume
 
     # Add methods and define
     def turnOn():
@@ -13,9 +13,11 @@ class TV:
         print("The TV is OFF")
     
     def getChannel():
-        for i in (channel):
-            channel_num[i] = channel_num[i] -1 
-            return channel_num                      
+        channel_num = int(input("What channel number you want? "))
+        if channel_num in channel:
+            print("You're on channel ", channel_num)
+        else:
+            print("The channel does not exist")                     
 
     
     def setChannel(channel: int): None
@@ -37,6 +39,7 @@ channel = list(range(1,121))
 volume = list(range(1,8))
 print("The current channel (1 to 120) of this TV.")
 print("The current volume level (1 to 7) of this TV.")
+#print(channel)
 TV.turnOff()
 while True:
     switch = input("Do you want to turn on your TV? ")
@@ -46,7 +49,6 @@ while True:
     # Indicates whether this TV is on/off
     if switch.lower() == "yes":
         TV.turnOn()
-        channel_num = int(input("What channel number you want? "))
         TV.getChannel()
     elif switch.lower() == "no":
         TV.turnOff()

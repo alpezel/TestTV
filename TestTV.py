@@ -1,4 +1,18 @@
 #### make display menu later ####
+def display_menu():
+    print ("\n\033[0;39m===================================================")
+    print ("                    TV SWITCH                      ")
+    print ("===================================================")
+    print ("\n     1. ON")
+    print ("     2. OFF")
+    print ("     3. SET CHANNEL")
+    print ("     4. CHANNEL UP")
+    print ("     5. CHANNEL DOWN")
+    print ("     6. SET VOLUME")
+    print ("     7. VOLUME UP")
+    print ("     8. VOLUME DOWN")
+    print ("\n===================================================")
+
 # Make a Class named TV
 class TV:
     # Create 2 objects 
@@ -22,9 +36,15 @@ class TV:
         return                   
 
     
-    def setChannel(channel: int): None
+    def setChannel(channel: 1): None
 
     def getVolume():
+        volumenow= 1
+        
+        return
+        
+
+    def setVolume(volumelevel: int):
         volume_num = int(input("What Volume Level you want? "))
         if volume_num in volume_lvl:
             print("Volume Level: ", volume_num)
@@ -32,7 +52,6 @@ class TV:
             print("The volume is only up to 7")
         return
 
-    def setVolume(volumelevel: int): None
 
     def channelUp():None
 
@@ -53,28 +72,36 @@ channel = list(range(1,121))
 volume_lvl = list(range(1,8))
 print("The current channel (1 to 120) of this TV.")
 print("The current volume level (1 to 7) of this TV.")
-#print(channel)
 TV.turnOff()
 while True:
-    switch = input("Do you want to turn on your TV? ")
-    while switch.lower()!= "yes" and switch.lower() != "no":
-        print ("\n[The input is not (yes or no)]\n")
-        switch = input("Do you want to turn on your TV? ")
-    # Indicates whether this TV is on/off
-    if switch.lower() == "yes":
+    display_menu()
+    while True:
+        try:
+            button = int(input("Press the number you want to operate "))
+            if button < 7 and button >= 1:
+                break
+        except ValueError:
+            print("The input is not in the menu")
+        else:  
+            print("The input is not in the menu")
+    
+    if button == 1:
+        print("\nTURNING ON...\n")
         TV.turnOn()
-        TV.getChannel()
-        TV.getVolume()
-        try_vol= input("up or down")
-        if try_vol == "up":
-            TV.volumeUp()
-        else:
-            TV.volumeDown()
-    elif switch.lower() == "no":
+    elif button == 2:
+        print("\nTURNING OFF...\n")
         TV.turnOff()
         break
-
-
+    elif button == 3:
+        TV.setChannel()
+    elif button == 4:
+        TV.channelUp()
+    elif button == 5:
+        TV.channelDown()
+    elif button == 6:
+        TV.setVolume()
+    elif button == 7:
+        TV.volumeUp()
+    elif button == 6:
+        TV.volumeDown()
     
-
-

@@ -7,21 +7,25 @@ class TV:
         self.on = False
 
     # Add methods and define
-    def turnOn():
-        self.on = True
+    def turnOn(self):
+        if self.on == 1:
+            True
      
-    def turnOff():
-        self.on = False
+    def turnOff(self):
+        if self.on != 1:
+            False
     
-    def getChannel(self):
-        return self.channel
+    def getChannel(self,channel):
+        if 1 <= channel <= 120:
+            return self.channel
     
     def setChannel(self, channel):
         if 1 <= channel <= 120:
             self.channel = channel
 
-    def getVolume(self):
-        return self.volume
+    def getVolume(self,volume):
+        if 1 <= volume <= 120:
+            return self.volume
     
     def setVolume(self, volume):
         if 1 <= volume <= 7:

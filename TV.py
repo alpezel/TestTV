@@ -41,13 +41,3 @@ class TV:
     def volume_down(self):
         if self.on and self.volume > 1:
             self.volume -= 1
-
-class Test_TV:
-    def test(self):
-        tv1 = TV()
-        tv2 = TV()
-
-        print("The initial channel of tv is ", tv1.get_channel(), "and the initial volume level is ", tv1.get_volume())
-
-test_tv= Test_TV()
-test_tv.test()

@@ -1,50 +1,53 @@
-    # Make a Class named TV
+# Make a Class named TV
 class TV:
     # Create 2 objects 
     def __init__(self):
         self.channel = 1
         self.volume = 1
         self.on = False
-
     # Add methods and define
-    def turnOn(self):
-        if self.on == 1:
-            True
-     
-    def turnOff(self):
-        if self.on != 1:
-            False
-    
-    def getChannel(self,channel):
-        if 1 <= channel <= 120:
-            return self.channel
-    
-    def setChannel(self, channel):
+    def turn_on(self):
+        self.on = True
+
+    def turn_off(self):
+        self.on = False
+
+    def get_channel(self):
+        return self.channel
+
+    def set_channel(self, channel):
         if 1 <= channel <= 120:
             self.channel = channel
 
-    def getVolume(self,volume):
-        if 1 <= volume <= 120:
-            return self.volume
-    
-    def setVolume(self, volume):
+    def get_volume(self):
+        return self.volume
+
+    def set_volume(self, volume):
         if 1 <= volume <= 7:
             self.volume = volume
-     
-    def channelUp(self):
+
+    def channel_up(self):
         if self.on and self.channel < 120:
             self.channel += 1
 
-
-    def channelDown(self):
+    def channel_down(self):
         if self.on and self.channel > 1:
             self.channel -= 1
 
-    def volumeUp(self):
+    def volume_up(self):
         if self.on and self.volume < 7:
             self.volume += 1
-       
-    def volumeDown(self):
+
+    def volume_down(self):
         if self.on and self.volume > 1:
             self.volume -= 1
 
+class Test_TV:
+    def test(self):
+        tv1 = TV()
+        tv2 = TV()
+
+        print("The initial channel of tv is ", tv1.get_channel(), "and the initial volume level is ", tv1.get_volume())
+
+test_tv= Test_TV()
+test_tv.test()

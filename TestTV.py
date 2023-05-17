@@ -1,31 +1,10 @@
-    # Make a Class named TV
-class TV:
-    # Create 2 objects 
-    def __init__(self, channel, volume ):
-        self.channel = channel
-        self.volume = volume
+# this is where the tv1 and tv2 are
+from TV import TV
+def main():
+    tv1 = TV(30,3)
+    print("tv1's channel is ",tv1.getChannel,"and volume level is",tv1.getVolume)
 
-    # Add methods and define
-    def turnOn():
-        True
-     
-    def turnOff():
-        False
-    
-    def getChannel(self):
-        return
-    
-    def setChannel(channel: 1): None
+    tv2 = TV(3,2)
+    print("tv1's channel is ",tv2.getVolume,"and volume level is",tv2.getVolume)
 
-    def getVolume():
-    
-    def setVolume(volumelevel: int):
-     
-    def channelUp():None
-
-    def channelDown():None
-
-    def volumeUp(self,volume):
-       
-    def volumeDown(self,volume):
-        
+main()

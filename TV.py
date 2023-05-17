@@ -1,32 +1,46 @@
     # Make a Class named TV
 class TV:
     # Create 2 objects 
-    def __init__(self, channel= range (1,121), volume= range(1,8) ):
-        self.channel = channel
-        self.volume = volume
+    def __init__(self):
+        self.channel = 1
+        self.volume = 1
+        self.on = False
 
     # Add methods and define
     def turnOn():
-        True
+        self.on = True
      
     def turnOff():
-        False
+        self.on = False
     
     def getChannel(self):
-        return
+        return self.channel
     
-    def setChannel(channel):None
+    def setChannel(self, channel):
+        if 1 <= channel <= 120:
+            self.channel = channel
 
     def getVolume(self):
-        return
+        return self.volume
     
-    def setVolume(self):None
+    def setVolume(self, volume):
+        if 1 <= volume <= 7:
+            self.volume = volume
      
-    def channelUp():None
+    def channelUp(self):
+        if self.on and self.channel < 120:
+            self.channel += 1
 
-    def channelDown():None
 
-    def volumeUp(self):None
+    def channelDown(self):
+        if self.on and self.channel > 1:
+            self.channel -= 1
+
+    def volumeUp(self):
+        if self.on and self.volume < 7:
+            self.volume += 1
        
-    def volumeDown(self):None
+    def volumeDown(self):
+        if self.on and self.volume > 1:
+            self.volume -= 1
 
